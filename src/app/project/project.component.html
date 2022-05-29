@@ -1,0 +1,26 @@
+<div class="my-3 mx-5">
+    <h3 class="my-4 animated animate__zoomIn">ADD TEXT</h3>
+    <textarea type="text" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" #box rows="5"></textarea>
+    <div id="passwordHelpBlock" class="form-text">
+    Add anything to store in the textpad 
+    </div>
+    <button class="btn btn-dark my-4" (click)="value(box.value)">Add</button>
+      <h6 style="text-align:center" class="mx-2 animated">Textpad</h6>
+    <div class="shadow-lg animated animate__zoomInDown my-3" *ngFor="let i of val">
+        <div class="card">
+            <div class="card-body">
+              <b class="card-title">{{i.data}}</b>
+              <div class="col-auto my-3 {{DontShow}}">
+                <input type="text" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+              </div>
+              <div class="my-2">
+                  <button type="button" class="btn btn-outline-dark" (click)="Edit()" *ngIf="set == true">Edit</button>
+                  <button type="button" class="btn btn-outline-dark" (click)="Update()" *ngIf="set == false">update</button>
+                  <button type="button" class="btn btn-outline-dark mx-2" (click)="delect(i.id)">Delect</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
